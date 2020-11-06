@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initialscale=1.0">
+
+<title>Tip Calculator</title>
+
+<!-- Here in the style tag we have basically assigned 
+     the table border and padding properties
+	 Also, input is also aligned to the center here-->
+<style>
+table, td, th {
+	border: 1px solid #DCDCDC;
+    border-collapse:collapse;
+    border-width:0.5px;
+    border-radius: 15px;
+    padding-top:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+}
+
+#container{
+
+	font-family:calibri;
+}
+input{
+	text-align:center;
+}
+</style>
+
+</head>
+
+
+<body>
+
+<div id="container">
+	<!--table id made here-->
+	<table align="center" >
+		<tr>
+			<td>
+			<!-- label and input for bill is made here-->
+				<label>Bill</label><br>
+				<input type="text" size="12.5" value="0.00" id="billTotal"><br>
+			<!-- label and input for tip is made here-->	
+			<!-- button +/- is also made for increment decrement-->
+				<label>Tip %</label><br><button onclick="decrement()">-</button><input id="tipInput" type="number" min="0" max="100" value="0"><button onclick="increment()">+</button><br>
+			<!-- label and input for Number of people is made here-->	
+			<!-- button +/- is also made for increment decrement-->
+				
+				<label>Number of people</label><br><button onclick="decrements()">-</button><input id="splitInput" value="1" type="number" min="1" max="100"><button onclick="increments()">+</button><br>
+					
+			</td>
+			
+			<td>
+			<!-- In this part tip per person and the total bill is showm -->
+			    <span style="font-size: 250%">Tip</span>
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="tipAmount" style="font-size: 180% ;font-family:arial; ">$0.00</span><br>per person<br>
+				<span style="font-size: 250%">Total </span>
+				&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="newBill" style="font-size: 180% ;font-family:arial;">$0.00</span><br>per person
+				<br>
+				
+			</td>
+		</tr>
+	</table>
+</div>
+
+<!--Here the javascript is used to increment and decrement the counter-->
+
+<script >
+   function increment() {
+      document.getElementById('tipInput').stepUp();
+   }
+   function decrement() {
+      document.getElementById('tipInput').stepDown();
+   }
+   function increments() {
+      document.getElementById('splitInput').stepUp();
+   }
+   function decrements() {
+      document.getElementById('splitInput').stepDown();
+   }  
+</script> 
+
+<script src="logic.js"></script>
+
+</body>
+</html>
